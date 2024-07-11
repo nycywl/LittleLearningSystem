@@ -28,7 +28,7 @@ namespace LittleLearningSystem.Models
                 entity.ToTable("Course");
 
                 entity.Property(e => e.CourseID)
-                    .ValueGeneratedOnAdd() // 设置CourseId自动递增
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("CourseID");
 
                 entity.Property(e => e.CourseName)
@@ -68,7 +68,7 @@ namespace LittleLearningSystem.Models
                 entity.ToTable("Material");
 
                 entity.Property(e => e.MaterialId)
-                    .ValueGeneratedOnAdd() // 设置MaterialId自动递增
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("MaterialID");
 
                 entity.Property(e => e.CourseId).HasColumnName("CourseID");
@@ -93,7 +93,7 @@ namespace LittleLearningSystem.Models
                 entity.ToTable("Student");
 
                 entity.Property(e => e.StudentId)
-                    .ValueGeneratedOnAdd() // 设置StudentId自动递增
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("StudentID");
 
                 entity.Property(e => e.Department)

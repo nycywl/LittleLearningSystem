@@ -15,7 +15,6 @@ namespace LittleLearningSystem.Controllers
     {
         DBManager dbm = new DBManager();  
 
-        // GET: Course
         public IActionResult Index()
         {
             string email = null;
@@ -49,13 +48,11 @@ namespace LittleLearningSystem.Controllers
 
             dbm.InsertDBCourse(course);
 
-            //同時寫入enroll DB
             dbm.InsertDBEnroll(email, course.CourseID);
 
             return RedirectToAction("Index", "Course");
         }
 
-        // GET: Course
         public IActionResult Edit(int id)
         {
             DataTable dt = dbm.GetDBCourseByID(id);
@@ -73,7 +70,6 @@ namespace LittleLearningSystem.Controllers
             return RedirectToAction("Index", "Course");
         }
 
-        // GET: Course
         public IActionResult Delete(int id)
         {
             string email = null;
