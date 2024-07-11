@@ -1,0 +1,44 @@
+﻿@using System.Data;
+
+@model LittleLearningSystem.Models.Course
+
+@{
+    DataTable dt = ViewData["Course"] as DataTable;
+    //string email = TempData.Peek("Email").ToString();
+}
+
+<h1>Courses</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Course</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Amount Limit</th>
+            <th>Course Week</th>
+            <th>Course Time</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow course in dt.Rows)
+        {
+            <tr>
+				<td>@course["CourseID"]</td>
+                <td>@course["CourseName"]</td>
+                <td>@course["AmountLimit"]</td>
+                <td>@course["CourseWeek"]</td>
+                <td>@course["CourseTime"]</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@course["CourseID"]" class="btn btn-primary">Edit Course</a>
+                    <a asp-action="Delete" asp-route-id="@course["CourseID"]" class="btn btn-danger">Delete Course</a>
+                    <a asp-action="Enroll" asp-route-id="@course["CourseID"]" class="btn btn-info">Enroll Students</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

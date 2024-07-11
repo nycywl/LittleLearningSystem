@@ -1,0 +1,49 @@
+﻿@using System.Data;
+@model LittleLearningSystem.Models.Course
+
+@{
+    DataTable dt = ViewData["CourseByID"] as DataTable;
+
+    
+}
+
+<h1>Edit Course</h1>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group">
+                <label asp-for="CourseID" class="control-label"></label>
+                <input asp-for="CourseID" class="form-control" name="CourseID" value= "@dt.Rows[0]["CourseID"]" readonly/>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseName" class="control-label"></label>
+                <input asp-for="CourseName" class="form-control" name="CourseName" value="@dt.Rows[0]["CourseName"]" readonly />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountLimit" class="control-label"></label>
+                <input asp-for="AmountLimit" class="form-control" name="AmountLimit" value="@dt.Rows[0]["AmountLimit"]" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseWeek" class="control-label"></label>
+                <input asp-for="CourseWeek" class="form-control" name="CourseWeek" value="@dt.Rows[0]["CourseWeek"]" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseTime" class="control-label"></label>
+                <input asp-for="CourseTime" class="form-control" name="CourseTime" type="time" value="@dt.Rows[0]["CourseTime"]" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </form>       
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Course List</a>
+</div>
+

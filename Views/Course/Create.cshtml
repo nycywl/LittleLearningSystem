@@ -1,0 +1,46 @@
+﻿@model LittleLearningSystem.Models.Course
+
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+<h1>Create Course</h1>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="CourseID" class="control-label"></label>
+                <input asp-for="CourseID" class="form-control" name="CourseID" />
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseName" class="control-label"></label>
+                <input asp-for="CourseName" class="form-control" name="CourseName" />
+             
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountLimit" class="control-label"></label>
+                <input asp-for="AmountLimit" class="form-control" name="AmountLimit" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseWeek" class="control-label"></label>
+                <input asp-for="CourseWeek" class="form-control" name="CourseWeek" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseTime" class="control-label"></label>
+                <input asp-for="CourseTime" class="form-control" name="CourseTime" type="time"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Course List</a>
+</div>
+
